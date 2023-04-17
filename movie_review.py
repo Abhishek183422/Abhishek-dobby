@@ -11,6 +11,7 @@ from sklearn.linear_model import LogisticRegression
 # Load data from CSV file
 # df = pd.read_csv("https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing")
 
+
 # Load data from CSV file
 url = 'https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing'
 path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
@@ -20,10 +21,10 @@ df = pd.read_csv(path)
 train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
 
 # Extract review texts and labels from the data
-
+train_texts = train_data["review"].tolist()
+train_labels = train_data["sentiment"].tolist()
 test_texts = test_data["review"].tolist()
 test_labels = test_data["sentiment"].tolist()
-
 
 # Preprocess data
 preprocessor = CountVectorizer(stop_words="english")
@@ -43,6 +44,7 @@ model.fit(X_train, train_labels)
 # Save the trained model and preprocessor
 joblib.dump(model, "model_new1.pkl")
 joblib.dump(preprocessor, "preprocessor_new1.pkl")
+
 
 
 
