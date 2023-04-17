@@ -9,7 +9,12 @@ import streamlit as st
 from sklearn.linear_model import LogisticRegression
 
 # Load data from CSV file
-df = pd.read_csv("https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing")
+# df = pd.read_csv("https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing")
+
+# Load data from CSV file
+url = 'https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing'
+path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
+df = pd.read_csv(path)
 
 # Split data into train and test sets
 train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
