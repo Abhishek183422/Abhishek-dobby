@@ -9,7 +9,7 @@ import streamlit as st
 from sklearn.linear_model import LogisticRegression
 
 # Load data from CSV file
-df = pd.read_csv("https://github.com/Abhishek183422/movie_review/blob/main/drive_file.md")
+df = pd.read_csv("https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa27r/view?usp=sharing")
 
 # Split data into train and test sets
 train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
