@@ -15,16 +15,10 @@ df = pd.read_csv("https://drive.google.com/file/d/1-2xifmYspjb8f2TlE_K1jZ_RQnrqa
 train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
 
 # Extract review texts and labels from the data
-train_texts = train_data["review"].tolist()
-train_labels = train_data["sentiment"].tolist()
 
 test_texts = test_data["review"].tolist()
 test_labels = test_data["sentiment"].tolist()
 
-# Preprocess data
-preprocessor = CountVectorizer(stop_words="english")
-X_train = preprocessor.fit_transform(train_texts)
-X_test = preprocessor.transform(test_texts)
 
 # Preprocess data
 preprocessor = CountVectorizer(stop_words="english")
